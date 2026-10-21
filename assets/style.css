@@ -124,17 +124,10 @@ p { margin: 0 0 1em; }
   letter-spacing: -0.02em;
   text-decoration: none;
 }
-.brand-q {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 3px solid var(--ink);
-  font-size: 1.15rem;
-  line-height: 1;
-  transform: rotate(-8deg);
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  flex: none;
 }
 
 .nav { display: flex; gap: 6px; align-items: center; }
