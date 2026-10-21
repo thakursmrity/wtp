@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why That Product: product teardowns, user discovery and interview prep</title>
+  <meta name="description" content="Why That Product takes apps and products apart one question at a time. Teardowns, user discovery learned in public, and interview prep, by Smrity.">
+  <meta property="og:title" content="Why That Product">
+  <meta property="og:description" content="Every product is a decision someone made. Let's find out why.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#F2EFFB">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23FFB627' stroke='%231D1B4D' stroke-width='3'/%3E%3Ctext x='16' y='23' font-size='20' font-weight='800' text-anchor='middle' fill='%231D1B4D' font-family='sans-serif'%3E%3F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="wobble" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="4"/>
+    </filter>
+  </svg>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="brand-q" aria-hidden="true">?</span>Why That Product</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">What this is</a>
+        <a href="content.html">What I make</a>
+        <a href="journey.html">Journey</a>
+        <a href="connect.html">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Every product is a decision someone made.</h1>
+          <p class="lede">I take apps and products apart, one question at a time. I'm Smrity. I'm learning user discovery in public, practicing interview answers out loud, and asking why until it makes sense. Come along.</p>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="mailto:whythatproduct@gmail.com?subject=Teardown%20request&amp;body=Hi%20Smrity%2C%20please%20break%20down%3A%20">Request a teardown</a>
+            <a class="btn btn-line" href="content.html">See what I make</a>
+          </div>
+        </div>
+
+        <div class="lab">
+          <div class="phone" id="phone">
+            <div class="layer layer-top sketch">
+              <div class="ui-top"><span class="ui-brand">Chai Dash</span><span>Deliver to <b>Home</b></span><span class="ui-dot" aria-hidden="true"></span></div>
+              <div class="ui-search">Search chai, samosa, anything
+                <button class="pin pin-2" style="--i:1" aria-pressed="false" aria-label="Why is search at the very top?" data-q="Why is search the first thing you see?" data-a="My guess: people who already know what they want leave fast if they cannot type it. Search is the shortcut for them, and the list below is for everyone else.">?</button>
+              </div>
+            </div>
+            <div class="layer layer-mid sketch">
+              <div class="ui-free">
+                <p>Add ₹59 more for free delivery</p>
+                <div class="ui-bar"><i></i></div>
+                <button class="pin pin-1" style="--i:0" aria-pressed="false" aria-label="Why a progress bar for free delivery?" data-q="Why a progress bar, not just a banner?" data-a="My guess: it turns a minimum order from a rule into a small game. You are 59 rupees away, and the easiest way to win is one more item.">?</button>
+              </div>
+              <div class="ui-item"><span>Masala chai<small>₹40</small></span><span class="ui-plus">+</span></div>
+              <div class="ui-item"><span>Bun maska<small>₹60</small></span><span class="ui-plus">+
+                <button class="pin pin-3" style="--i:2" aria-pressed="false" aria-label="Why a tiny plus button?" data-q="Why a tiny + instead of an Add to cart button?" data-a="My guess: fewer taps and no page change. The product is betting you will add more than one thing, so it makes adding feel almost free.">?</button></span></div>
+              <div class="ui-item"><span>Cutting chai<small>₹40</small></span><span class="ui-plus">+</span></div>
+              <div class="ui-again">Order again: your usual
+                <button class="pin pin-4" style="--i:3" aria-pressed="false" aria-label="Why is order again placed above the menu?" data-q="Why does Order again sit above the menu?" data-a="My guess: a repeat order is cheaper to win than a new one, and most of the time you want what you got last time. I would check how many orders start here.">?</button>
+              </div>
+            </div>
+            <div class="layer layer-bottom sketch">
+              <div class="ui-cart"><span>3 items</span><b>View cart, ₹140</b>
+                <button class="pin pin-5" style="--i:4" aria-pressed="false" aria-label="Why does the cart follow you down the page?" data-q="Why does the cart follow you around?" data-a="My guess: a cart you can always see is a cart you remember to finish. I would test whether it lifts completed orders or just adds clutter.">?</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-card sketch" id="why-card" aria-live="polite">
+            <p class="why-q" id="why-q">Pick a pink question mark.</p>
+            <p class="why-a" id="why-a">Each one marks a decision somebody made. I'll tell you what I think they were solving for, and what I'd check to be sure.</p>
+          </div>
+
+          <div class="lab-controls">
+            <button class="btn btn-gold" id="apart" aria-pressed="false" type="button">Take it apart</button>
+            <span class="hint">tap the pink ? marks</span>
+          </div>
+          <p class="fine">Chai Dash is a made-up app, so nobody's feelings get hurt. Real teardowns say what I see and what I'm guessing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>Four things I make</h2>
+          <p class="soft">Short videos, written notes, and a lot of questions. Pick the one you're curious about.</p>
+        </div>
+        <div class="sheet">
+          <a class="sticker sticker-a" href="content.html#teardowns">
+            <h3>Teardowns</h3>
+            <p>One product, one question: why does it exist? I look at a screen, guess the decision behind it, and say what I'd want to know to be sure.</p>
+            <span class="more">More about teardowns</span>
+          </a>
+          <a class="sticker sticker-b" href="content.html#would-they-pay">
+            <h3>Would They Pay?</h3>
+            <p>A quick verdict on whether people would really pay for an idea, and the evidence I'd look for before believing it. Saying yes is cheap. Paying is not.</p>
+            <span class="more">More about verdicts</span>
+          </a>
+          <a class="sticker sticker-c" href="content.html#discovery">
+            <h3>Discovery diaries</h3>
+            <p>Notes from talking to real users: the awkward first calls, the questions that flopped, and the one answer that changed the idea.</p>
+            <span class="more">More about discovery</span>
+          </a>
+          <a class="sticker sticker-d" href="content.html#interview-prep">
+            <h3>Interview prep</h3>
+            <p>Pick any app and practice answering how you'd improve it in two minutes. No memorized frameworks, just three whys.</p>
+            <span class="more">More about interview prep</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="block-head">
+          <h2>How a teardown goes</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Pick something people use</h3>
+            <p>An app on your phone, a checkout you've been through, a feature you've noticed without noticing.</p>
+          </li>
+          <li>
+            <h3>Ask why about every choice</h3>
+            <p>Why that button, that order, that word? Every choice on a screen cost somebody a decision.</p>
+          </li>
+          <li>
+            <h3>Say what's seen and what's guessed</h3>
+            <p>I can't see their data, so I mark my guesses as guesses and say what I'd test to find out.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>What should I break down next?</h2>
+        <p>Send me a product you use every day, or one you can't stop wondering about. The best teardowns start with someone else's question.</p>
+        <div class="btn-row">
+          <a class="btn btn-gold" href="mailto:whythatproduct@gmail.com?subject=Teardown%20request&amp;body=Hi%20Smrity%2C%20please%20break%20down%3A%20">Send a product</a>
+          <a class="btn btn-line" href="connect.html">Other ways to connect</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <p class="foot-line">That's the why. See you in the next product.</p>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://www.youtube.com/@WhythatProduct" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/whythatproduct" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://x.com/whythatproduct" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.linkedin.com/company/whythatproduct" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+      <p class="copy">Why That Product, 2026. Made by Smrity.</p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
