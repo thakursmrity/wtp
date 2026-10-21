@@ -66,4 +66,97 @@
       });
     });
   }
+
+  // Contact form on the connect page
+  var form = document.getElementById("contact-form");
+  if (form) {
+    var hints = {
+      product: "Which app, checkout or feature are you curious about, and what makes you wonder?",
+      call: "What problem do you solve in your day that you'd be happy to talk through?",
+      question: "Which product interview question is giving you trouble, and what have you tried so far?",
+      hi: "Say whatever's on your mind."
+    };
+    var area = form.querySelector("textarea");
+    var errorBox = document.getElementById("form-error");
+    var sendBtn = document.getElementById("form-send");
+    var done = document.getElementById("contact-done");
+
+    var setType = function (type) {
+      var radio = form.querySelector('input[name="type"][value="' + type + '"]');
+      if (!radio) return;
+      radio.checked = true;
+      area.placeholder = hints[type];
+    };
+
+    form.querySelectorAll('input[name="type"]').forEach(function (r) {
+      r.addEventListener("change", function () { area.placeholder = hints[r.value]; });
+    });
+
+    var fromLink = new URLSearchParams(window.location.search).get("type");
+    if (fromLink) setType(fromLink);
+
+    document.querySelectorAll("[data-type]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setType(link.getAttribute("data-type"));
+        window.setTimeout(function () { area.focus({ preventScroll: true }); }, 500);
+      });
+    });
+
+    var showError = function (text) {
+      errorBox.textContent = text;
+      errorBox.hidden = false;
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      errorBox.hidden = true;
+
+      var data = {
+        type: form.querySelector('input[name="type"]:checked').value,
+        name: form.elements.name.value,
+        email: form.elements.email.value.trim(),
+        message: form.elements.message.value.trim(),
+        website: form.elements.website.value
+      };
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email)) {
+        showError("Please enter an email address I can reply to.");
+        form.elements.email.focus();
+        return;
+      }
+      if (data.message.length < 5) {
+        showError("Please write a few words so I know what you have in mind.");
+        area.focus();
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending";
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (body) { return { ok: r.ok, body: body }; });
+        })
+        .then(function (r) {
+          if (r.ok) {
+            form.hidden = true;
+            done.hidden = false;
+            done.focus();
+            return;
+          }
+          showError(r.body.error || "That didn't send. Please try again, or email whythatproduct@gmail.com.");
+        })
+        .catch(function () {
+          showError("That didn't send. Please check your connection and try again, or email whythatproduct@gmail.com.");
+        })
+        .then(function () {
+          sendBtn.disabled = false;
+          sendBtn.textContent = "Send message";
+        });
+    });
+  }
 })();

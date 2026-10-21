@@ -46,7 +46,7 @@
     <section class="page-head">
       <div class="wrap">
         <h1>Come figure out the why with me.</h1>
-        <p class="lede">This only works if it's a two-way street. Here are three easy ways to join in, and everywhere you can find me.</p>
+        <p class="lede">This only works if it's a two-way street. Pick a way to join in below, or write to me directly, and find me wherever I post.</p>
       </div>
     </section>
 
@@ -56,18 +56,66 @@
           <div class="ask sketch">
             <h3>Suggest a product</h3>
             <p>Tell me an app, a checkout, or a feature you can't stop wondering about. I'll look at it closely and may turn it into a teardown.</p>
-            <a class="btn" href="mailto:whythatproduct@gmail.com?subject=Teardown%20request&amp;body=Hi%20Smrity%2C%20please%20break%20down%3A%20">Send a product</a>
+            <a class="btn" href="#message" data-type="product">Send a product</a>
           </div>
           <div class="ask sketch">
             <h3>Be a discovery call</h3>
             <p>I'm practicing user discovery, and I learn most from real people. If you'll chat about how you solve an everyday problem, I'd love to listen.</p>
-            <a class="btn" href="mailto:whythatproduct@gmail.com?subject=Discovery%20call&amp;body=Hi%20Smrity%2C%20I'd%20be%20happy%20to%20chat%20about%20how%20I%20handle%3A%20">Offer a chat</a>
+            <a class="btn" href="#message" data-type="call">Offer a chat</a>
           </div>
           <div class="ask sketch">
             <h3>Send a question</h3>
             <p>Got a product interview question that scares you, or something you're stuck on? Send it over and it might become an interview prep video.</p>
-            <a class="btn" href="mailto:whythatproduct@gmail.com?subject=Interview%20question&amp;body=Hi%20Smrity%2C%20here%20is%20a%20question%20I'm%20stuck%20on%3A%20">Send a question</a>
+            <a class="btn" href="#message" data-type="question">Send a question</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" style="padding-top: 0;" id="message">
+      <div class="wrap form-wrap">
+        <div class="block-head">
+          <h2>Send me a message</h2>
+          <p class="soft">It goes straight to my private inbox. If it fits something I'm working on, I'll write back by email.</p>
+        </div>
+
+        <form class="form sketch" id="contact-form" novalidate>
+          <fieldset class="types">
+            <legend>What's this about?</legend>
+            <label class="pill"><input type="radio" name="type" value="product" checked><span>Suggest a product</span></label>
+            <label class="pill"><input type="radio" name="type" value="call"><span>Offer a chat</span></label>
+            <label class="pill"><input type="radio" name="type" value="question"><span>Send a question</span></label>
+            <label class="pill"><input type="radio" name="type" value="hi"><span>Say hi</span></label>
+          </fieldset>
+
+          <div class="field">
+            <label for="f-name">Your name <span class="opt">(optional)</span></label>
+            <input id="f-name" name="name" type="text" maxlength="80" autocomplete="name">
+          </div>
+
+          <div class="field">
+            <label for="f-email">Your email</label>
+            <input id="f-email" name="email" type="email" maxlength="254" autocomplete="email" required aria-describedby="email-help">
+            <p class="help" id="email-help">Only used to reply to you. I won't add you to any list.</p>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Your message</label>
+            <textarea id="f-message" name="message" rows="6" maxlength="2000" required placeholder="Which app, checkout or feature are you curious about, and what makes you wonder?"></textarea>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+          <button class="btn btn-gold" type="submit" id="form-send">Send message</button>
+        </form>
+
+        <div class="done sketch" id="contact-done" tabindex="-1" hidden>
+          <p class="hand">Got it, thank you.</p>
+          <p>Your message is in my inbox. If it fits something I'm working on, I'll write back by email. Until then, have a look at what I'm making.</p>
+          <a class="btn btn-line" href="content.html">See what I make</a>
         </div>
       </div>
     </section>

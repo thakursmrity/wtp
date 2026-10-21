@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inbox: Why That Product</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F2EFFB">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/admin.css">
+</head>
+<body class="admin">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="/" target="_blank" rel="noopener noreferrer"><img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="40" height="40">Why That Product</a>
+      <div class="admin-actions">
+        <a class="btn btn-line sm" href="/" target="_blank" rel="noopener noreferrer">View site</a>
+        <button class="btn sm" id="logout" type="button" hidden>Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap admin-main">
+    <p id="loading" class="soft">Opening your inbox</p>
+
+    <section id="login" hidden>
+      <h1>Inbox</h1>
+      <form class="form sketch login-form" id="login-form">
+        <div class="field">
+          <label for="pw">Password</label>
+          <input id="pw" type="password" autocomplete="current-password" required>
+        </div>
+        <p class="form-error" id="login-error" role="alert" hidden></p>
+        <button class="btn btn-gold" type="submit" id="login-btn">Log in</button>
+      </form>
+    </section>
+
+    <section id="setup" hidden>
+      <h1>Almost there</h1>
+      <p class="form-error" id="setup-msg"></p>
+    </section>
+
+    <section id="inbox" hidden>
+      <div class="inbox-top">
+        <h1>Inbox</h1>
+        <button class="btn btn-line sm" id="refresh" type="button">Refresh</button>
+      </div>
+
+      <div class="filters" id="filters" role="group" aria-label="Show messages"></div>
+      <div class="type-filter">
+        <label for="type-filter">Type</label>
+        <select id="type-filter">
+          <option value="all">All types</option>
+          <option value="product">Suggest a product</option>
+          <option value="call">Offer a chat</option>
+          <option value="question">Interview question</option>
+          <option value="hi">Just saying hi</option>
+        </select>
+      </div>
+
+      <p id="status" class="soft" role="status" aria-live="polite"></p>
+      <div id="list"></div>
+      <p id="empty" class="empty" hidden></p>
+    </section>
+  </main>
+
+  <script src="/assets/admin.js"></script>
+</body>
+</html>
