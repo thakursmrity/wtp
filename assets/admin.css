@@ -1,0 +1,52 @@
+/* Private inbox */
+.admin-wrap { padding: 8px 0 80px; }
+.login { max-width: 460px; margin: clamp(24px, 8vw, 80px) auto 0; }
+.login .btn { margin-top: 6px; }
+
+.bar { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tabs button, .bar .small {
+  border: 3px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font: 700 1rem var(--display);
+  cursor: pointer;
+}
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.bar .tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.bar select { font: 600 1rem var(--display); color: var(--ink); background: var(--white); border: 3px solid var(--ink); border-radius: 999px; padding: 8px 14px; }
+
+.msg { position: relative; background: var(--white); border-radius: 16px; padding: 22px 24px; margin-bottom: 20px; }
+.msg.is-new { background: #FFF3D1; }
+.msg-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 12px; }
+.msg-head h3 { font-size: 1.25rem; margin: 0; }
+.msg-head .when { color: var(--ink-soft); font-size: 0.95rem; }
+.badge { display: inline-block; border: 2px solid var(--ink); border-radius: 999px; padding: 2px 12px; font-size: 0.9rem; font-weight: 700; }
+.badge-product { background: var(--gold); }
+.badge-discovery { background: var(--mint); }
+.badge-question { background: var(--pink); }
+.badge-other { background: var(--paper-2); }
+.badge-status { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.msg-body { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0 0 16px; max-width: 70ch; }
+.msg-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.msg-actions button, .msg-actions a {
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font: 700 0.95rem var(--display);
+  text-decoration: none;
+  cursor: pointer;
+}
+.msg-actions .danger { border-color: var(--pink-deep); color: var(--pink-deep); }
+.msg-actions button:hover, .msg-actions a:hover { background: var(--gold); }
+.msg-actions .danger:hover { background: var(--pink-deep); color: var(--white); }
+.msg-note label { display: block; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+.msg-note textarea { width: 100%; min-height: 70px; font: inherit; font-size: 1rem; background: var(--paper); border: 2px solid var(--ink); border-radius: 10px; padding: 10px 12px; resize: vertical; }
+.msg-note button { margin-top: 8px; }
+.empty { background: var(--white); border-radius: 16px; padding: 28px; max-width: 560px; }
+.admin-status { font-weight: 600; margin: 0 0 16px; min-height: 1.5em; }
+.admin-status.is-error { color: var(--pink-deep); }

@@ -1,0 +1,5 @@
+{
+  "name": "why-that-product",
+  "private": true,
+  "description": "Why That Product: static site with a small contact form and private inbox on Vercel Functions."
+}
