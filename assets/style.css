@@ -1,16 +1,16 @@
 /* Why That Product
-   Palette: lilac paper, deep indigo ink, marigold, hot pink, mint.
+   Palette: only deep navy, hot pink and white.
    Type: Bricolage Grotesque for everything printed, Caveat for anything "written by hand". */
 
 :root {
-  --paper: #F2EFFB;
-  --paper-2: #E6E0F6;
-  --ink: #1D1B4D;
-  --ink-soft: #4A4780;
-  --gold: #FFB627;
-  --pink: #FF6FA5;
-  --pink-deep: #D9266F;
-  --mint: #BFECD6;
+  --paper: #FFFFFF;
+  --paper-2: #FFFFFF;
+  --ink: #1B1450;
+  --ink-soft: #1B1450;
+  --gold: #FF3D8B;
+  --pink: #FF3D8B;
+  --pink-deep: #E0227A;
+  --mint: #FFFFFF;
   --white: #FFFFFF;
   --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
   --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
@@ -24,7 +24,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background-color: var(--paper);
-  background-image: radial-gradient(circle, rgba(29, 27, 77, 0.12) 1.2px, transparent 1.5px);
+  background-image: radial-gradient(circle, rgba(27, 20, 80, 0.12) 1.2px, transparent 1.5px);
   background-size: 26px 26px;
   color: var(--ink);
   font-family: var(--display);
@@ -202,7 +202,7 @@ p { margin: 0 0 1em; }
 .layer-mid { border-radius: 0; z-index: 2; }
 .layer-bottom { border-radius: 0 0 28px 28px; z-index: 1; padding-block: 14px; }
 
-.phone.is-apart .layer { border-radius: 20px; box-shadow: 0 22px 30px -18px rgba(29, 27, 77, 0.45); }
+.phone.is-apart .layer { border-radius: 20px; box-shadow: 0 22px 30px -18px rgba(27, 20, 80, 0.45); }
 .phone.is-apart .layer + .layer { margin-top: 0; }
 .phone.is-apart .layer-top { transform: translateY(-30px) rotate(-1.6deg); }
 .phone.is-apart .layer-bottom { transform: translateY(30px) rotate(1.4deg); }
@@ -350,7 +350,7 @@ p { margin: 0 0 1em; }
   height: 26px;
   margin-left: -42px;
   background: rgba(255, 255, 255, 0.6);
-  border: 2px solid rgba(29, 27, 77, 0.25);
+  border: 2px solid rgba(27, 20, 80, 0.25);
   transform: rotate(-3deg);
 }
 .sticker h3 { font-size: 1.7rem; margin-bottom: 10px; }
@@ -614,7 +614,7 @@ p { margin: 0 0 1em; }
 }
 
 /* Contact form */
-.form-wrap { max-width: 760px; margin-inline: 0; }
+.form-wrap .block-head, .form-wrap .form, .form-wrap .done { max-width: 760px; }
 .form { background: var(--white); border-radius: 18px; padding: clamp(22px, 4vw, 40px); display: grid; gap: 22px; }
 .types { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .types legend { font-weight: 800; font-size: 1.1rem; margin-bottom: 12px; padding: 0; }
